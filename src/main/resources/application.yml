@@ -1,0 +1,9 @@
+spring:
+  grpc:
+    client:
+      channel:
+        stock-service:
+          target: static://localhost:9090
+
+server:
+  port: 8080   # only needed if you add webmvc
