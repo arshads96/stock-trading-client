@@ -7,19 +7,23 @@ option java_outer_classname = "StockTradingProto";
 
 service StockTradingService{
 
-    //Unary - RPC --> get current stock price
-    rpc getStockPrice(StockRequest) returns (StockResponse);
+  //Unary - RPC --> get current stock price
+  rpc getStockPrice(StockRequest) returns (StockResponse);
+
+  //server streaming
+
+  rpc subscribeStockPrice(StockRequest) returns (stream StockResponse);
 
 }
 
 message StockRequest{
 
-    string stockSymbol = 1;
+  string stockSymbol = 1;
 }
 
 message StockResponse{
-    string stockSymbol = 1;
-    double stockPrice = 2;
-    string currency = 3;
-    string Timestamp = 4;
+  string stockSymbol = 1;
+  double stockPrice = 2;
+  string currency = 3;
+  string Timestamp = 4;
 }
