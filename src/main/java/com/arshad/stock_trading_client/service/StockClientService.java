@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StockClientService {
 
-    private StockTradingServiceGrpc.StockTradingServiceBlockingStub stockStub;
+    private final StockTradingServiceGrpc.StockTradingServiceBlockingStub stockStub;
 
     public StockClientService(StockTradingServiceGrpc.StockTradingServiceBlockingStub stockStub){
         this.stockStub = stockStub;
